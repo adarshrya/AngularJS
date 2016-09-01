@@ -1,0 +1,12 @@
+<div *ngIf="sharing && sharing.Persons.length==0">Add atleast 1 Person</div> 
+<div *ngIf="sharing &&  sharing.Persons.length>0">
+    <div class="card card-block" *ngFor="let pers of sharing.Persons">
+        <h3 class="card-title">{{pers.Name}}</h3>
+        <div class="card card-block" *ngFor="let exp of pers.Expense">
+            <h3 class="card-title">{{exp.Description}} for   {{sharing.Currency}} {{exp.Ammount}}</h3>
+            <ul>
+                <li *ngFor="let sharer of exp.NameShare">{{sharer.Name}} will pay {{sharer.Myshare}} part</li>
+            </ul> 
+        </div>
+    </div>
+</div>

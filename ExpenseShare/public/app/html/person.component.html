@@ -1,0 +1,7 @@
+<form *ngIf="person" class="form-inline" (submit)="AddPerson(person)" autocomplete="off">
+  <div class="form-group">
+    <label for="pName">Name</label>
+    <input type="text" name="pName" [(ngModel)]="person.Name"  class="form-control" required="true" ng-required="required"  id="pName" placeholder="Name">
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>

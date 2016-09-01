@@ -1,0 +1,34 @@
+<div *ngIf="sharing && sharing.Persons.length<2">Add atleast 2 Person</div> 
+<form class="form-horizontal" *ngIf="sharing && sharing.Persons.length>=2" (submit)="addExpense(expense)" autocomplete="off">
+    <div class="form-group">
+        <label for="ammount">Ammount</label>
+        <input type="number" name="ammount" [(ngModel)]="expense.Ammount" class="form-control" required="true" ng-required="required" id="ammount" placeholder="Ammount">
+    </div>
+     
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" [(ngModel)]="expense.Description" class="form-control" required="true" ng-required="required" id="description" placeholder="Description">
+    </div>
+   
+    <div class="form-group">
+        <label for="Persons">Expense is Made By</label>
+        <select (change)="setName($event.target.value)" name="Persons" required="true" class="form-control" ng-required="required" id="Persons">
+             <option [value]="">Select a Name</option>
+            <option *ngFor="let p of sharing.Persons" [value]="p.Name">{{p.Name}}</option>
+        </select>
+    </div>
+   
+    <div class="form-group">
+        <label for="Persons">Who shares who much part</label>
+        <ul>
+            <li *ngFor="let shares of expense.NameShare">
+                <div class="form-group">
+                    <label for="shares">{{shares.Name}}</label>
+                    <input type="number" name="shares" [(ngModel)]="shares.Myshare" class="form-control" required="true" ng-required="required" id="shares" value="0" placeholder="Shares">
+                </div>
+            </li>
+        </ul>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

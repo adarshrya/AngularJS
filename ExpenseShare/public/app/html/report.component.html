@@ -1,0 +1,39 @@
+<div class="card card-block">    
+<h3 class="card-title">Who owes how much</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Owes to</th>
+            <th>How Much</th>
+        </tr>
+    </thead>
+    <tbody> 
+            <tr *ngFor="let ows of GetOwes()">
+                <td>{{ows.name}} owes to {{ows.owes}}</td>
+                <td>{{currency}} {{ows.amount}}</td>
+            </tr>
+         
+    </tbody>
+</table>
+</div>
+<div class="card card-block">
+<h3 class="card-title">Sharing</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Total sharing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of report">
+            <td>{{item.name}}</td>
+            <td>{{currency}} {{item.sharing.toFixed(2)}}</td>
+        </tr>
+         <tr>
+             <td>Total Expense</td>
+            <td>{{currency}} {{GetTotal()}}</td>            
+        </tr>
+    </tbody>
+</table>
+</div>

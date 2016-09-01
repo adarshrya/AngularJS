@@ -1,0 +1,10 @@
+
+
+<form class="form-inline" *ngIf="sharing" (submit)="setCurrency()" autocomplete="off">
+  <div class="form-group">
+    <label for="currency">New Currency</label>
+    <input type="text" name="currency" [(ngModel)]="sharing.Currency"  class="form-control" required="true" ng-required="required"  id="currency" placeholder="Currency">
+  </div>
+
+  <button type="submit" class="btn btn-primary">OK</button>
+</form>
