@@ -1,4 +1,3 @@
-
 import { Routes, RouterModule } from '@angular/router';
 import {ShareComponent} from './share.component';
 import {CurrencyComponent} from './currency.component';

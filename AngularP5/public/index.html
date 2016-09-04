@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <title>P5 JS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="js/vendor/es6-shim/es6-shim.min.js"></script>
+
+    <script src="js/vendor/zone.js/dist/zone.js"></script>
+    <script src="js/vendor/reflect-metadata/Reflect.js"></script>
+    <script src="js/vendor/systemjs/dist/system.src.js"></script>
+    <script language="javascript" type="text/javascript" src="js/libraries/p5.min.js"></script>
+    <script language="javascript" src="js/libraries/p5.dom.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err) {
+            console.error(err);
+        });
+    </script>
+</head>
+
+<body>
+    <my-app>Loading...</my-app>
+</body>
+<script src="fire.js"></script>
+<script src="rain.js"></script>
+<script src="starwar.js"></script>
+<script src="lsystem.js"></script>
+<script src="flappy.js"></script>
+<script src="tree.js"></script>
+
+</html>
